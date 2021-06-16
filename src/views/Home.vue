@@ -2,8 +2,6 @@
   <div id="app">
       <h1 class="font-semibold text-3xl text-center mt-6">{{garageName}} </h1>
 			<p class="text-center mt-6 ">
-				{{$store.state.annee}}
-				{{annee}}
 				Bienvenue dans au {{garageName}} ! 				
 				Apple pie jelly beans chupa chups topping gingerbread marzipan. Jelly cake tootsie roll chocolate cake danish biscuit.
 				Cupcake cake apple pie ice cream donut sweet roll candy. Pudding oat cake topping. 
@@ -39,7 +37,6 @@
 <script>
 import axios from 'axios';
 import ArticlesItem from '../components/ArticlesItem.vue';
-import {mapState} from 'vuex';
 export default {
   name: 'App',
   components: {
@@ -93,8 +90,6 @@ export default {
 
                         return `Copyright ${this.garageName} ${currentYear}`
                     },
-					...mapState(
-						['annee'])
                 },
 				methods:{
 					addToShoppingCart(amount){

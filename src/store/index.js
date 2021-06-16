@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    annee : 2021
+    
   },
   mutations: {
   },
