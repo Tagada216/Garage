@@ -14,9 +14,16 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    MODIF_NOM(state){
+      state.garageName =" Garage Dupont"
+    }
   },
   actions: {
+     changelenom(context){
+       context.commit('MODIF_NOM');
+     }
   },
   modules: {
   }
 })
+  

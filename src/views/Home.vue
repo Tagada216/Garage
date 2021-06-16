@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <h1 class="font-semibold text-3xl text-center mt-6">{{garageName}} </h1>
+      <h1 class="font-semibold text-3xl text-center mt-6">{{$store.state.garageName}} </h1>
+	<button @click="changelenom">Change </button>
 			<p class="text-center mt-6 ">
 				Bienvenue dans au {{garageName}} ! 				
 				Apple pie jelly beans chupa chups topping gingerbread marzipan. Jelly cake tootsie roll chocolate cake danish biscuit.
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import axios from 'axios';
 import ArticlesItem from '../components/ArticlesItem.vue';
 export default {
@@ -46,7 +47,8 @@ export default {
 
   mounted() { 
 	console.log('Je suis monté sur le DOM!'),
-	this.getMargarita()
+	this.getMargarita();
+	
   },
  
   data(){
@@ -106,7 +108,9 @@ export default {
 								console.log(this.maMargarita)
 							} )
 							.catch(error => console.log(error))
-					}
+					},
+					...mapActions(["changelenom"])
+
 				}
 }
 </script>
