@@ -2,7 +2,7 @@
     <div>
            <h2 class="text-center mt-6 text-2xl" >Contactez nous</h2>
 			<p class="text-center mt-2 ">Adresse : {{address}} </p>
-			<p class="text-center mt-2 ">Téléphone : {{phone}}</p>
+			<p class="text-center mt-2 ">Téléphone : {{tel}}</p>
 			<p class="text-center mt-2 ">Email : {{email}}</p>
 			<p class="text-center mt-4 text-xl">Horaires :</p>
 			<ul class="text-center mt-4 ">
@@ -13,6 +13,7 @@
     </div>
 </template>
 <script>
+import {mapState} from 'vuex';
 export default {
     data(){
     return{
@@ -20,6 +21,9 @@ export default {
                   address: "18 avenue de la roue, Lille, France",
 					email: "hello@garagedurant.fr",
 					phone: "01 59 59 59 59",
-    }}
+    }},
+	computed :{
+		...mapState(['tel'])
+	}
 }
 </script>

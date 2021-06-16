@@ -29,12 +29,13 @@
 			</div>
          
 			<footer class="text-center mt-8">
-				<p>{{footerCopyright}}</p>
+				<p> {{copyright}}</p>
 			</footer>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import axios from 'axios';
 import ArticlesItem from '../components/ArticlesItem.vue';
 export default {
@@ -90,6 +91,7 @@ export default {
 
                         return `Copyright ${this.garageName} ${currentYear}`
                     },
+					...mapGetters(['copyright'])
                 },
 				methods:{
 					addToShoppingCart(amount){
